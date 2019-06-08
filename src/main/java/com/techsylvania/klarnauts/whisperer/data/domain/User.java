@@ -25,18 +25,20 @@ public class User {
   private String city;
   private String country;
 
+  @Column(name = "api_token")
+  private String apiToken;
+
   public User() {}
 
   public User(
-      Long id,
       String email,
       String password,
       String birthDate,
       String gender,
       String zipCode,
       String city,
-      String country) {
-    this.id = id;
+      String country,
+      String apiToken) {
     this.email = email;
     this.password = password;
     this.birthDate = birthDate;
@@ -44,6 +46,7 @@ public class User {
     this.zipCode = zipCode;
     this.city = city;
     this.country = country;
+    this.apiToken = apiToken;
   }
 
   public Long getId() {
@@ -108,5 +111,13 @@ public class User {
 
   public void setCountry(String country) {
     this.country = country;
+  }
+
+  public String getApiToken() {
+    return apiToken;
+  }
+
+  public void setApiToken(String apiToken) {
+    this.apiToken = apiToken;
   }
 }

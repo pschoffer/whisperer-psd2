@@ -1,3 +1,5 @@
+DROP table public.user;
+
 CREATE TABLE public.user(
    id serial PRIMARY KEY,
    email VARCHAR (355) UNIQUE NOT NULL,
@@ -10,8 +12,10 @@ CREATE TABLE public.user(
    api_token VARCHAR (256)
 );
 
--- INSERT INTO public.USER (id, email, password, birth_date, gender, zip_code, city, country) VALUES (1, 'test@test.com', '123', '12/07/1989', 'M', '16865', 'STOCKHOLM', 'SWEDEN', '127e1e83-5ccf-4474-a86e-f3da61b150cb');
+INSERT INTO public.USER (id, email, password, birth_date, gender, zip_code, city, country, api_token)
+VALUES (1, 'test@test.com', '123', '12/07/1989', 'M', '16865', 'STOCKHOLM', 'SWEDEN', '127e1e83-5ccf-4474-a86e-f3da61b150cb');
 
+DROP table public.account;
 CREATE TABLE public.account(
     iban VARCHAR (128) PRIMARY KEY,
     user_id VARCHAR (128) UNIQUE NOT NULL,
@@ -22,6 +26,7 @@ CREATE TABLE public.account(
     country VARCHAR (32) NOT NULL
 );
 
+DROP table public.merchant;
 CREATE TABLE public.merchant(
     id VARCHAR (128) PRIMARY KEY,
     name VARCHAR (128) ,
@@ -31,6 +36,7 @@ CREATE TABLE public.merchant(
     zip_code VARCHAR (32)
 );
 
+DROP table public.transaction;
 CREATE TABLE public.transaction(
     id VARCHAR (128) PRIMARY KEY,
     account_id VARCHAR (128) NOT NULL,

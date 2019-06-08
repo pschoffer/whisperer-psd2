@@ -33,6 +33,7 @@ import javax.sql.DataSource;
 // @ConditionalOnProperty("db.postgres.enabled")
 public class PostgresDbConfig {
 
+  private static final String ENDPOINT = "34.245.213.6";
   private static final Logger LOGGER = LogManager.getLogger(PostgresDbConfig.class);
 
   @Autowired private Environment environment;
@@ -44,7 +45,7 @@ public class PostgresDbConfig {
     LOGGER.debug("Creating DataSource bean called postgresDataSource");
     return DataSourceBuilder.create()
         .driverClassName("org.postgresql.Driver")
-        .url("jdbc:postgresql://ec2-34-244-251-101.eu-west-1.compute.amazonaws.com:5432/psd2")
+        .url("jdbc:postgresql://" + ENDPOINT + ":5432/psd2")
         .username("psd2")
         .password("psd2")
         .build();

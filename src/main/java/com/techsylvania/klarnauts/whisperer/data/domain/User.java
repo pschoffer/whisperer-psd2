@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name = "user")
 public class User {
 
-  @Id private String id;
+  @Id private Long id;
   private String email;
   private String password;
 
@@ -32,7 +32,7 @@ public class User {
   public User() {}
 
   public User(
-      String id,
+      Long id,
       String email,
       String password,
       Date birthDate,
@@ -52,11 +52,11 @@ public class User {
     this.apiToken = apiToken;
   }
 
-  public String getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

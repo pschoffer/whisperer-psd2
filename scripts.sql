@@ -25,11 +25,11 @@ CREATE TABLE public.user(
 );
 
 INSERT INTO public.USER (id, email, password, birth_date, gender, zip_code, city, country, api_token)
-VALUES (1, 'test@test.com', '123', '12/07/1989', 'M', '16865', 'STOCKHOLM', 'SWEDEN', '127e1e83-5ccf-4474-a86e-f3da61b150cb');
+VALUES (1, 'test@test.com', '123', '1989-07-12', 'M', '16865', 'STOCKHOLM', 'SWEDEN', '127e1e83-5ccf-4474-a86e-f3da61b150cb');
 INSERT INTO public.USER (id, email, password, birth_date, gender, zip_code, city, country, api_token)
-VALUES (2, 'richer@test.com', '123', '12/07/1992', 'F', '16865', 'STOCKHOLM', 'SWEDEN', '127e1e83-5ccf-4474-a86e-f3da61b150cb');
+VALUES (2, 'richer@test.com', '123', '1992-07-12', 'F', '16865', 'STOCKHOLM', 'SWEDEN', '127e1e83-5ccf-4474-a86e-f3da61b150cb');
 INSERT INTO public.USER (id, email, password, birth_date, gender, zip_code, city, country, api_token)
-VALUES (3, 'ercument@hello.com', '123', '12/07/1969', 'M', '12811', 'STOCKHOLM', 'SWEDEN', '127e1e83-5ccf-4474-a86e-f3da61b150cb');
+VALUES (3, 'ercument@hello.com', '123', '1969-07-12', 'M', '12811', 'STOCKHOLM', 'SWEDEN', '127e1e83-5ccf-4474-a86e-f3da61b150cb');
 
 DROP table public.account;
 CREATE TABLE public.account(
@@ -64,20 +64,20 @@ CREATE TABLE public.transaction(
     zip_code VARCHAR (32)
 );
 INSERT INTO public.transaction (id, account_id, amount, currency, merchant_id, bookkeeping_date, mcc_code, credit_debit_indicator, installment_indicator, zip_code)
-VALUES ('1234', 1, 18004, 'EUR', 'test-merchant', '07/06/2019', 'GROCERIES', 'D', 'N', '60202');
+VALUES ('1234', 1, 18004, 'EUR', 'test-merchant', '2019-07-06', 'GROCERIES', 'D', 'N', '60202');
 INSERT INTO public.transaction (id, account_id, amount, currency, merchant_id, bookkeeping_date, mcc_code, credit_debit_indicator, installment_indicator, zip_code)
-VALUES ('1235', 1, 9908, 'EUR', 'test-merchant', '08/06/2019', 'SHOPPING', 'C', 'N', '60202');
+VALUES ('1235', 1, 9908, 'EUR', 'test-merchant', '2019-08-06', 'SHOPPING', 'C', 'N', '60202');
 INSERT INTO public.transaction (id, account_id, amount, currency, merchant_id, bookkeeping_date, mcc_code, credit_debit_indicator, installment_indicator, zip_code)
-VALUES ('1236', 1, 1200, 'EUR', 'test-merchant', '01/06/2019', 'SHOPPING', 'C', 'N', '60202');
+VALUES ('1236', 1, 1200, 'EUR', 'test-merchant', '2019-01-06', 'SHOPPING', 'C', 'N', '60202');
 INSERT INTO public.transaction (id, account_id, amount, currency, merchant_id, bookkeeping_date, mcc_code, credit_debit_indicator, installment_indicator, zip_code)
-VALUES ('1237', 1, 8711, 'EUR', 'test-merchant', '01/06/2019', 'RESTAURANT', 'C', 'N', '60202');
+VALUES ('1237', 1, 8711, 'EUR', 'test-merchant', '2019-01-06', 'RESTAURANT', 'C', 'N', '60202');
 INSERT INTO public.transaction (id, account_id, amount, currency, merchant_id, bookkeeping_date, mcc_code, credit_debit_indicator, installment_indicator, zip_code)
-VALUES ('1238', 1, 999, 'EUR', 'test-merchant', '01/06/2019', 'HEALTH', 'C', 'N', '60202');
+VALUES ('1238', 1, 999, 'EUR', 'test-merchant', '2019-01-06', 'HEALTH', 'C', 'N', '60202');
 INSERT INTO public.transaction (id, account_id, amount, currency, merchant_id, bookkeeping_date, mcc_code, credit_debit_indicator, installment_indicator, zip_code)
-VALUES ('1239', 2, 12081, 'EUR', 'test-merchant', '01/05/2019', 'RESTAURANT', 'C', 'N', '60203');
+VALUES ('1239', 2, 12081, 'EUR', 'test-merchant', '2019-01-05', 'RESTAURANT', 'C', 'N', '60203');
 INSERT INTO public.transaction (id, account_id, amount, currency, merchant_id, bookkeeping_date, mcc_code, credit_debit_indicator, installment_indicator, zip_code)
-VALUES ('1240', 3, 11920, 'EUR', 'test-merchant', '03/05/2019', 'RESTAURANT', 'C', 'N', '60203');
+VALUES ('1240', 3, 11920, 'EUR', 'test-merchant', '2019-03-05', 'RESTAURANT', 'C', 'N', '60203');
 INSERT INTO public.transaction (id, account_id, amount, currency, merchant_id, bookkeeping_date, mcc_code, credit_debit_indicator, installment_indicator, zip_code)
-VALUES ('1241', 3, 1523, 'EUR', 'test-merchant', '03/05/2019', 'GROCERIES', 'C', 'N', '60203');
+VALUES ('1241', 3, 1523, 'EUR', 'test-merchant', '2019-03-05', 'GROCERIES', 'C', 'N', '60203');
 
 -- HOUSING, GROCERIES, HOUSEHOLD SERVICES, RESTAURANT, SHOPPING, TRANSPORTATION, HEALTH, LEISURE , OTHER

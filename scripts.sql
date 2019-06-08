@@ -46,7 +46,7 @@ DROP table public.transaction;
 CREATE TABLE public.transaction(
     id VARCHAR (128) PRIMARY KEY,
     account_id int NOT NULL,
-    amount VARCHAR (32) NOT NULL,
+    amount numeric NOT NULL,
     currency VARCHAR (32) NOT NULL,
     merchant_id VARCHAR (32) NOT NULL,
     bookkeeping_date date NOT NULL ,

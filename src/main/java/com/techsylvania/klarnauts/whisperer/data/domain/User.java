@@ -1,5 +1,7 @@
 package com.techsylvania.klarnauts.whisperer.data.domain;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +17,7 @@ public class User {
   private String password;
 
   @Column(name = "birth_date")
-  private String birthDate;
+  private Date birthDate;
 
   private String gender;
 
@@ -33,7 +35,7 @@ public class User {
   public User(
       String email,
       String password,
-      String birthDate,
+      Date birthDate,
       String gender,
       String zipCode,
       String city,
@@ -73,11 +75,11 @@ public class User {
     this.password = password;
   }
 
-  public String getBirthDate() {
+  public Date getBirthDate() {
     return birthDate;
   }
 
-  public void setBirthDate(String birthDate) {
+  public void setBirthDate(Date birthDate) {
     this.birthDate = birthDate;
   }
 

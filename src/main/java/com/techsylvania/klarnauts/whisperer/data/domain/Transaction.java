@@ -1,5 +1,7 @@
 package com.techsylvania.klarnauts.whisperer.data.domain;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -21,7 +23,7 @@ public class Transaction {
   private String merchantId;
 
   @Column(name = "bookkeeping_date")
-  private String bookkeepingDate;
+  private Date bookkeepingDate;
 
   @Column(name = "mcc_code")
   private String mccCode;
@@ -34,6 +36,29 @@ public class Transaction {
 
   @Column(name = "zip_code")
   private String zipCode;
+
+  public Transaction(
+      String id,
+      String accountId,
+      String amount,
+      String currency,
+      String merchantId,
+      Date bookkeepingDate,
+      String mccCode,
+      String creditDebitIndicator,
+      String installmentIndicator,
+      String zipCode) {
+    this.id = id;
+    this.accountId = accountId;
+    this.amount = amount;
+    this.currency = currency;
+    this.merchantId = merchantId;
+    this.bookkeepingDate = bookkeepingDate;
+    this.mccCode = mccCode;
+    this.creditDebitIndicator = creditDebitIndicator;
+    this.installmentIndicator = installmentIndicator;
+    this.zipCode = zipCode;
+  }
 
   public String getId() {
     return id;
@@ -75,11 +100,11 @@ public class Transaction {
     this.merchantId = merchantId;
   }
 
-  public String getBookkeepingDate() {
+  public Date getBookkeepingDate() {
     return bookkeepingDate;
   }
 
-  public void setBookkeepingDate(String bookkeepingDate) {
+  public void setBookkeepingDate(Date bookkeepingDate) {
     this.bookkeepingDate = bookkeepingDate;
   }
 
@@ -112,29 +137,6 @@ public class Transaction {
   }
 
   public void setZipCode(String zipCode) {
-    this.zipCode = zipCode;
-  }
-
-  public Transaction(
-      String id,
-      String accountId,
-      String amount,
-      String currency,
-      String merchantId,
-      String bookkeepingDate,
-      String mccCode,
-      String creditDebitIndicator,
-      String installmentIndicator,
-      String zipCode) {
-    this.id = id;
-    this.accountId = accountId;
-    this.amount = amount;
-    this.currency = currency;
-    this.merchantId = merchantId;
-    this.bookkeepingDate = bookkeepingDate;
-    this.mccCode = mccCode;
-    this.creditDebitIndicator = creditDebitIndicator;
-    this.installmentIndicator = installmentIndicator;
     this.zipCode = zipCode;
   }
 }

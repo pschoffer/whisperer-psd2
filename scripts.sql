@@ -56,6 +56,6 @@ CREATE TABLE public.transaction(
     zip_code VARCHAR (32)
 );
 INSERT INTO public.transaction (id, account_id, amount, currency, merchant_id, bookkeeping_date, mcc_code, credit_debit_indicator, installment_indicator, zip_code)
-VALUES ('1234', 1, 12, 'EUR', 'test-merchant', '07/06/2019', 'GROCERIES', 'D', 'N', '60202')
+VALUES ('1234', 1, 18004, 'EUR', 'test-merchant', '07/06/2019', 'GROCERIES', 'D', 'N', '60202');
 
 -- HOUSING, GROCERIES, HOUSEHOLD SERVICES, RESTAURANT, SHOPPING, TRANSPORTATION, HEALTH, LEISURE , OTHER

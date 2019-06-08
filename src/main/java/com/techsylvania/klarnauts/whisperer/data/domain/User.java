@@ -4,7 +4,6 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,7 +11,7 @@ import javax.persistence.Table;
 @Table(name = "user")
 public class User {
 
-  @Id @GeneratedValue private Long id;
+  @Id private String id;
   private String email;
   private String password;
 
@@ -33,6 +32,7 @@ public class User {
   public User() {}
 
   public User(
+      String id,
       String email,
       String password,
       Date birthDate,
@@ -41,6 +41,7 @@ public class User {
       String city,
       String country,
       String apiToken) {
+    this.id = id;
     this.email = email;
     this.password = password;
     this.birthDate = birthDate;
@@ -51,11 +52,11 @@ public class User {
     this.apiToken = apiToken;
   }
 
-  public Long getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(String id) {
     this.id = id;
   }
 

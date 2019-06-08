@@ -1,9 +1,13 @@
 package com.techsylvania.klarnauts.whisperer.service;
 
+import com.techsylvania.klarnauts.whisperer.data.domain.ReportItem;
 import com.techsylvania.klarnauts.whisperer.data.repo.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -16,15 +20,12 @@ public class TransactionServiceImpl implements TransactionService {
     this.transactionRepository = transactionRepository;
   }
 
-  /**
-   * @param ageLowerLimit inclusive
-   * @param ageUpperLimit inclusive
-   * @return Key = MccCode , Value =Amount
-   */
-  @Override
-  public Map<String, String> getPurchaseAmountsByAge(int ageLowerLimit, int ageUpperLimit) {
 
-    //transactionRepository.fetchMccCodeAndPurchaseAmountsByAge(ageLowerLimit, ageUpperLimit);
-    return null;
+  @Override
+  public List<ReportItem> getAmountsPerCategory() {
+    final List<ReportItem> temp = Arrays.asList(new ReportItem("one", 12, 2600, null),
+        new ReportItem("two", 78, 12600, null));
+
+    return temp;
   }
 }

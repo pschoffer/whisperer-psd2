@@ -1,8 +1,10 @@
 package com.techsylvania.klarnauts.whisperer.service;
 
-import java.util.Map;
+import com.techsylvania.klarnauts.whisperer.data.domain.ReportItem;
+
+import java.util.List;
 
 public interface TransactionService {
 
-  Map<String, String> getPurchaseAmountsByAge(int ageLowerLimit, int ageUpperLimit);
+  List<ReportItem> getAmountsPerCategory();
 }

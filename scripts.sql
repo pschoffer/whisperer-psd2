@@ -13,7 +13,7 @@ VALUES ('test-merchant', 'Test Merchant', 'test@info.com', '123', 'GROCERIES', '
 
 DROP table public.user;
 CREATE TABLE public.user(
-   id serial PRIMARY KEY,
+   id int PRIMARY KEY,
    email VARCHAR (355) UNIQUE NOT NULL,
    password VARCHAR (50) NOT NULL,
    birth_date date NOT NULL,
@@ -26,12 +26,14 @@ CREATE TABLE public.user(
 
 INSERT INTO public.USER (id, email, password, birth_date, gender, zip_code, city, country, api_token)
 VALUES (1, 'test@test.com', '123', '12/07/1989', 'M', '16865', 'STOCKHOLM', 'SWEDEN', '127e1e83-5ccf-4474-a86e-f3da61b150cb');
+INSERT INTO public.USER (id, email, password, birth_date, gender, zip_code, city, country, api_token)
+VALUES (2, 'richer@test.com', '123', '12/07/2010', 'F', '16865', 'STOCKHOLM', 'SWEDEN', '127e1e83-5ccf-4474-a86e-f3da61b150cb');
 
 DROP table public.account;
 CREATE TABLE public.account(
     id int PRIMARY KEY,
     iban VARCHAR (128),
-    user_id VARCHAR (128) UNIQUE NOT NULL,
+    user_id int UNIQUE NOT NULL,
     prefix VARCHAR (32) NOT NULL,
     bank_code VARCHAR (32) NOT NULL,
     bic VARCHAR (32) NOT NULL,

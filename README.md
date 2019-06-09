@@ -1,5 +1,7 @@
 # Whisperer
 
+This project is built in Techsylvania Hackathon: https://techsylvania.com/hackathon/
+
 Whisperer is a merchant analytics tool based on PSD2.
 
 ### How it Works?

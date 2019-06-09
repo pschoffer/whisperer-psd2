@@ -69,11 +69,11 @@ public class TransactionServiceImpl implements TransactionService {
 
     results.forEach(
         result -> {
-          if (GOLD_AMOUNT.compareTo(result.totalAmount) >= 0) {
+          if (result.totalAmount.compareTo(GOLD_AMOUNT) >= 0) {
             segmentationMap.put("Gold", segmentationMap.get("Gold") + 1);
-          } else if (SILVER_AMOUNT.compareTo(result.totalAmount) >= 0) {
+          } else if (result.totalAmount.compareTo(SILVER_AMOUNT) >= 0) {
             segmentationMap.put("Silver", segmentationMap.get("Silver") + 1);
-          } else if (BRONZE_AMOUNT.compareTo(result.totalAmount) >= 0) {
+          } else if (result.totalAmount.compareTo(BRONZE_AMOUNT) >= 0) {
             segmentationMap.put("Bronze", segmentationMap.get("Bronze") + 1);
           } else {
             segmentationMap.put("None", segmentationMap.get("None") + 1);

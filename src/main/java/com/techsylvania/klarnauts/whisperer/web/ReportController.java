@@ -6,6 +6,7 @@ import com.techsylvania.klarnauts.whisperer.data.domain.ReportItem;
 import com.techsylvania.klarnauts.whisperer.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,11 +33,23 @@ public class ReportController {
     return objectMapper.writeValueAsString(result.toArray());
   }
 
-  @GetMapping("/segmentation")
-  public String getSegmentationReport() throws JsonProcessingException {
+  @GetMapping("/segmentation/{gender}/{ageGroup}")
+  public String getSegmentationReport(@PathVariable String gender, @PathVariable String ageGroup)
+      throws JsonProcessingException {
+    String genderFilter = "";
+    int lowerAge;
+    int upperAge;
+    try {
+      String[] ageGroups = ageGroup.split("-");
+      lowerAge = Integer.parseInt(ageGroups[0]);
+      upperAge = Integer.parseInt(ageGroups[1]);
+    } catch (Exception e) {
+      lowerAge = 0;
+      upperAge = 120;
+    }
     Map<String, Integer> segmentationResults =
         transactionService.getCustomerPurchaseCountAndAmountSumPerMerchant(
-            "test-merchant", 10, 75, "");
+            "test-merchant", lowerAge, upperAge, gender);
     return objectMapper.writeValueAsString(segmentationResults);
   }
 }

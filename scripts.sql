@@ -29,9 +29,12 @@ VALUES (1, 'test@test.com', '123', '1989-07-12', 'M', '16865', 'STOCKHOLM', 'SWE
 INSERT INTO public.USER (id, email, password, birth_date, gender, zip_code, city, country, api_token)
 VALUES (2, 'richer@test.com', '123', '1992-07-12', 'F', '16865', 'STOCKHOLM', 'SWEDEN', '127e1e83-5ccf-4474-a86e-f3da61b151771');
 INSERT INTO public.USER (id, email, password, birth_date, gender, zip_code, city, country, api_token)
-VALUES (3, 'ercument@hello.com', '123', '1969-07-12', 'M', '12811', 'STOCKHOLM', 'SWEDEN', '127e1e83-5ccf-4474-a86e-f3da613783872');
+VALUES (3, 'ercument@hello.com', '123', '1969-07-12', 'M', '12811', 'STOCKHOLM', 'SWEDEN', '127e1e83-5ccf-4474-a86e-f3da61b150cb');
 INSERT INTO public.USER (id, email, password, birth_date, gender, zip_code, city, country, api_token)
-VALUES (4, 'hello@hello.com', '123', '1979-07-12', 'M', '12811', 'STOCKHOLM', 'SWEDEN', '127e1e83-5ccf-4474-a86e-asdasda2');
+VALUES (4, 'ercument@hello2.com', '123', '1969-07-12', 'M', '12811', 'STOCKHOLM', 'SWEDEN', '127e1e83-5ccf-4474-a86e-f3da61b150cb');
+INSERT INTO public.USER (id, email, password, birth_date, gender, zip_code, city, country, api_token)
+VALUES (5, 'ercument@hello3.com', '123', '1969-07-12', 'M', '12811', 'STOCKHOLM', 'SWEDEN', '127e1e83-5ccf-4474-a86e-f3da61b150cb');
+
 
 DROP table public.account;
 CREATE TABLE public.account(
@@ -51,7 +54,9 @@ VALUES (2, 'SE35 5000 0000 0549 2030 1922', 2, '5402', 'SE23', 'SEB', 'EUR', 'SW
 INSERT into public.account (id, iban, user_id, prefix, bank_code, bic, currency, country)
 VALUES (3, 'SE35 5000 0000 0524 5106 9810', 3, '5402', 'SE23', 'SEB', 'EUR', 'SWE');
 INSERT into public.account (id, iban, user_id, prefix, bank_code, bic, currency, country)
-VALUES (4, 'SE35 5000 0000 1223 5106 1832', 4, '5402', 'SE23', 'SEB', 'EUR', 'SWE');
+VALUES (4, 'SE35 5000 0000 0524 5106 9810', 4, '5402', 'SE23', 'SEB', 'EUR', 'SWE');
+INSERT into public.account (id, iban, user_id, prefix, bank_code, bic, currency, country)
+VALUES (5, 'SE35 5000 0000 0524 5106 9810', 5, '5402', 'SE23', 'SEB', 'EUR', 'SWE');
 
 
 DROP table public.transaction;
@@ -84,6 +89,8 @@ VALUES ('1240', 3, 11920, 'EUR', 'test-merchant', '2019-03-05', 'RESTAURANT', 'C
 INSERT INTO public.transaction (id, account_id, amount, currency, merchant_id, bookkeeping_date, mcc_code, credit_debit_indicator, installment_indicator, zip_code)
 VALUES ('1241', 3, 1523, 'EUR', 'test-merchant', '2019-03-05', 'GROCERIES', 'C', 'N', '60203');
 INSERT INTO public.transaction (id, account_id, amount, currency, merchant_id, bookkeeping_date, mcc_code, credit_debit_indicator, installment_indicator, zip_code)
-VALUES ('1242', 4, 24000, 'EUR', 'test-merchant', '2019-03-05', 'LEISURE', 'D', 'N', '60203');
+VALUES ('1242', 4, 1523, 'EUR', 'test-merchant', '2019-03-05', 'LEISURE', 'C', 'N', '60203');
+INSERT INTO public.transaction (id, account_id, amount, currency, merchant_id, bookkeeping_date, mcc_code, credit_debit_indicator, installment_indicator, zip_code)
+VALUES ('1243', 5, 152300, 'EUR', 'test-merchant', '2019-03-05', 'GROCERIES', 'C', 'N', '60203');
 
 -- HOUSING, GROCERIES, HOUSEHOLD SERVICES, RESTAURANT, SHOPPING, TRANSPORTATION, HEALTH, LEISURE , OTHER

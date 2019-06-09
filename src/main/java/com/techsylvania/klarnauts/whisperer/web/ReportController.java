@@ -36,7 +36,6 @@ public class ReportController {
   @GetMapping("/segmentation/{gender}/{ageGroup}")
   public String getSegmentationReport(@PathVariable String gender, @PathVariable String ageGroup)
       throws JsonProcessingException {
-    String genderFilter = "";
     int lowerAge;
     int upperAge;
     try {

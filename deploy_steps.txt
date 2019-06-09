@@ -1,0 +1,52 @@
+THIS SHOULD REALLY BE AUTOMATED :)
+
+SETUP DB
+sudo yum -y update
+sudo yum -y install postgresql
+sudo yum -y install postgresql-server postgresql-contrib
+sudo -i -u postgres
+
+vim /var/lib/pgsql/data/postgresql.conf
+(change listen_addresses = '*' )
+vim /var/lib/pgsql/data/pg_hba.conf
+(add host    all             all             0.0.0.0/0            md5)
+
+pg_ctl start
+createuser --pwprompt psd2
+createdb psd2
+
+SETUP Backend
+sudo yum -y update
+sudo yum -y install java-1.8.0-openjdk-devel git
+ssh-keygen 
+cat ~/.ssh/id_rsa.pub
+<<<create deploy key>>>
+git clone git@github.com:pschoffer/whisperer-psd2.git
+./run.sh
+
+
+SETUP Frontend
+sudo amazon-linux-extras install nginx1.12
+sudo systemctl start nginx
+
+<<on host>>
+ng build --prod --build-optimizer
+scp -ri ~/hackathon.pem dist ec2-user@54.171.160.15:
+
+<<on server>>
+sudo su
+cd /usr/share/nginx/html/
+rm -rf ./*
+cp -r /home/ec2-user/dist/whisperer-spa/* ./
+
+
+
+USEFULL
+
+sudo netstat -plnt | grep java
+
+Frontend
+cp -r /home/ec2-user/git/whisperer-psd2-frontend/dist/whisperer-psd2-frontend/*.* /usr/share/nginx/html/
+
+Backend 
+java -jar build/libs/whisperer-0.0.1-SNAPSHOT.jar -Dspring.profiles.active=local -Djava.net.preferIPv4Stack=true 
